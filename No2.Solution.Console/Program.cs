@@ -15,6 +15,7 @@ namespace No2.Solution.Console
             weatherData.Register(new StatisticReport());
             weatherData.Register(new ForeCastReport());
             weatherData.MeasurementsChange(12, 23, 567);
+            System.Console.ReadLine();
         }
     }
 }

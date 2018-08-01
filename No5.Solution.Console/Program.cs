@@ -10,6 +10,7 @@ namespace No5.Solution.Console
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
