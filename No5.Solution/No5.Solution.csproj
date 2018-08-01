@@ -40,15 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base64DocumentPartVisitor.cs" />
+    <Compile Include="DocumentPartHelper.cs" />
     <Compile Include="DocumentPartVisitor.cs" />
-    <Compile Include="NewFolder1\BoldText.cs" />
-    <Compile Include="NewFolder1\HtmlConverter.cs" />
-    <Compile Include="NewFolder1\HyperText.cs" />
-    <Compile Include="NewFolder1\IDocumentConverter.cs" />
-    <Compile Include="NewFolder1\IDocumentPart.cs" />
-    <Compile Include="NewFolder1\LatexConverter.cs" />
-    <Compile Include="NewFolder1\PlainText.cs" />
-    <Compile Include="NewFolder1\PlainTextConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

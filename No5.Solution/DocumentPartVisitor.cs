@@ -1,15 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace No5.Solution
 {
     public abstract class DocumentPartVisitor
     {
-        // Нужен визитор иерархии DocumentPart, но до последнего не хотелось его делать, он некрасивый(((
-        // не люблю визитор, но здесь он все-таки нужен.
+        public void Visit(DocumentPart part)
+        {
+            if (part == null)
+            {
+                throw new ArgumentNullException($"{nameof(part)} is null");
+            }
+
+            Visit((dynamic)part);
+        }
+
+        protected abstract void Visit(BoldText part);
+
+        protected abstract void Visit(Hyperlink part);
+
+        protected abstract void Visit(PlainText part);
     }
 }
