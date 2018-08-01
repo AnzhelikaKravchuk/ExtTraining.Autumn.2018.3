@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace No1.Solution
 {
-    public interface IVerifier
+    public interface IPasswordValidator
     {
-        IdentityResult Verify(string password);
+        void Validate(string password);
     }
 }

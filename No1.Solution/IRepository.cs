@@ -8,6 +8,6 @@ namespace No1.Solution
 {
     public interface IRepository
     {
-        void Write(string password);
+        void Create(string password);
     }
 }

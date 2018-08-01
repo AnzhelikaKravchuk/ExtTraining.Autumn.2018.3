@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace No1.Solution
 {
-    public class SqlRepository : IRepository
+    public interface IPasswordCheckerService
     {
-        public void Create(string password)
-        {
-            
-        }
+        Tuple<string, bool> Verify(string password);
     }
 }
