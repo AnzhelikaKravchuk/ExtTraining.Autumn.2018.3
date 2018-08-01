@@ -1,4 +1,6 @@
-﻿namespace No5
+﻿using No5.Solution;
+
+namespace No5
 {
     public class PlainText : DocumentPart
     {
