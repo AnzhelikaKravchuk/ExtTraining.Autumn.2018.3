@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
+using Moq;
 
 namespace No3.Solution.Tests
 {
@@ -13,9 +14,11 @@ namespace No3.Solution.Tests
         {
             Calculator calculator = new Calculator();
 
+            var mean = new CalculateMean();
+
             double expected = 8.3636363;
 
-            double actual = calculator.CalculateAverage(values, AveragingMethod.Mean);
+            double actual = calculator.CalculateAverage(values, mean);
 
             Assert.AreEqual(expected, actual, 0.000001);
         }
@@ -27,7 +30,28 @@ namespace No3.Solution.Tests
 
             double expected = 8.0;
 
-            double actual = calculator.CalculateAverage(values, AveragingMethod.Median);
+            var median = new CalculateMedian();
+
+            double actual = calculator.CalculateAverage(values, median);
+
+            Assert.AreEqual(expected, actual, 0.000001);
+        }
+
+        [Test]
+        public void Test_Moq_Object()
+        {
+            Calculator calculator = new Calculator();
+
+            double expected = 8.0;
+
+            var medianMoq = new Mock<ICalculate>();
+            medianMoq.Setup(x => x.CalculateAverage(values))
+                .Returns(8.0);
+
+            double actual = calculator.CalculateAverage(values, medianMoq.Object);
+
+            medianMoq.Verify(x => x.CalculateAverage(values),
+                Times.Exactly(1));
 
             Assert.AreEqual(expected, actual, 0.000001);
         }
