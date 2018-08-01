@@ -14,7 +14,7 @@ namespace No5.Solution.Console
             };
 
             var document = new Document(parts);
-            System.Console.WriteLine(document.ToString(parts, ConversionType.LaTeX));
+            System.Console.WriteLine(document.ToString(ConversionType.LaTeX));
         }
     }
 }
