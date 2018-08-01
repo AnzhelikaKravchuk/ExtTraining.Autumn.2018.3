@@ -40,7 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DocumentPartVisitor.cs" />
+    <Compile Include="NewFolder1\BoldText.cs" />
+    <Compile Include="NewFolder1\HtmlConverter.cs" />
+    <Compile Include="NewFolder1\HyperText.cs" />
+    <Compile Include="NewFolder1\IDocumentConverter.cs" />
+    <Compile Include="NewFolder1\IDocumentPart.cs" />
+    <Compile Include="NewFolder1\LatexConverter.cs" />
+    <Compile Include="NewFolder1\PlainText.cs" />
+    <Compile Include="NewFolder1\PlainTextConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\No5\No5.csproj">
+      <Project>{f1d4087e-e149-44bd-a619-6234ee35a702}</Project>
+      <Name>No5</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

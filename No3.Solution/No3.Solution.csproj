@@ -40,7 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Variant 1\IAverageFinder.cs" />
+    <Compile Include="Variant 1\AverageFinderDecorator.cs" />
+    <Compile Include="Variant 1\MeanAverageFinder.cs" />
+    <Compile Include="Variant 1\MedianAverageFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Variant2\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
