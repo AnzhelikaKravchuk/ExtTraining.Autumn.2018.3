@@ -4,7 +4,7 @@
     {
         public string Url { get; set; }
 
-        public override string ToHtml() => "<a href=\"" + this.Url + "\">" + this.Text + "</a>";
+        public override string ToHtml() => "<a href=\"" + Url + "\">" + this.Text + "</a>";
 
         public override string ToPlainText() => this.Text + " [" + this.Url + "]";
 

@@ -8,7 +8,6 @@ namespace No2
 {
     public class ForeCastReport : IObserver
     {
-        public void Update(IObservable sender, WeatherInfo info)
-            => Console.WriteLine("ForeCast");
+        public void Update(IObservable sender, WeatherInfo info) => Console.WriteLine("ForeCast");
     }
 }

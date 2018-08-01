@@ -8,9 +8,8 @@ namespace No6.Solution.Tests
         [Test]
         public void Generator_ForSequence1()
         {
-            int[] expected = {1, 1, 2, 3, 5, 8, 13, 21, 34, 55};
-
-            Assert.Inconclusive();
+            int[] expected = { 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 };
+            CollectionAssert.AreEqual(Sequences.GenerateFirstSequence<int>(expected.Length), expected);
         }
 
         [Test]
@@ -18,7 +17,7 @@ namespace No6.Solution.Tests
         {
             int[] expected = { 1, 2, 4, 8, 16, 32, 64, 128, 256, 512 };
 
-            Assert.Inconclusive();
+            CollectionAssert.AreEqual(Sequences.GenerateSecondSequence<int>(expected.Length), expected);
         }
 
         [Test]
