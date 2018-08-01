@@ -40,7 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PasswordCheckerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\SqlRepository.cs" />
+    <Compile Include="Validation\AdminsValidator.cs" />
+    <Compile Include="Validation\AlphabeticValidator.cs" />
+    <Compile Include="Validation\DefaultValidator.cs" />
+    <Compile Include="Validation\DigitValidator.cs" />
+    <Compile Include="Validation\IValidator.cs" />
+    <Compile Include="Validation\LengthValidator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

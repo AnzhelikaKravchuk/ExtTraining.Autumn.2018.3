@@ -12,7 +12,7 @@ namespace No3
             {
                 throw  new ArgumentNullException(nameof(values));
             }
-
+            
             switch (averagingMethod)
             {
                 case AveragingMethod.Mean:

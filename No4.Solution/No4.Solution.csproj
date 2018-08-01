@@ -40,7 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Content generators\ByteContentGenerator.cs" />
+    <Compile Include="Content generators\CharContentGenerator.cs" />
+    <Compile Include="Content generators\Helpers\RandomStringGenerator.cs" />
+    <Compile Include="Content generators\IContentGenerator.cs" />
+    <Compile Include="File generators\FileGenerator.cs" />
+    <Compile Include="File generators\Helpers\FileNameGenerator.cs" />
+    <Compile Include="File generators\Helpers\FileWriter.cs" />
+    <Compile Include="File generators\RandomBytesFileGenerator.cs" />
+    <Compile Include="File generators\RandomCharsFIleGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="No3.Solution, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\No3.Solution.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,6 +45,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="via Strategy\Calculator.cs" />
+    <Compile Include="via Strategy\IAverage.cs" />
+    <Compile Include="via Strategy\MeanAverage.cs" />
+    <Compile Include="via Strategy\MedianAverage.cs" />
+    <Compile Include="via Template method\AverageAlgorithm.cs" />
+    <Compile Include="via Template method\Calculator.cs" />
+    <Compile Include="via Template method\MeanMethod.cs" />
+    <Compile Include="via Template method\MedianMethod.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
