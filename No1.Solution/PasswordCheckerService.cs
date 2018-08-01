@@ -1,15 +1,51 @@
 ﻿using System;
 using System.Linq;
+using Moq;
 
-//TODO IRepositry, Компаратор-валдидатор в качестве делегата 
-
-namespace No1
+namespace No1.Solution
 {
     public class PasswordCheckerService
     {
-        private SqlRepository repository = new SqlRepository();
+        private IRepository repository;
+        private Func<string, Tuple<bool, string>> customVerifier;
+
+        
+    public PasswordCheckerService(IRepository repository, Func<string, Tuple<bool, string>> customVerifier)
+    {
+        this.repository = repository;
+        this.customVerifier = customVerifier;
+    }
+
+
 
         public Tuple<bool, string> VerifyPassword(string password)
+        {
+            if (customVerifier != null)
+            {
+                return CustomVerifier(password);
+            }
+            else
+            {
+                return DefaultVerifier(password);
+            }
+        }
+        
+        private Tuple<bool, string> CustomVerifier(string password)
+        {
+            foreach (var verifier in customVerifier.GetInvocationList())
+            {
+                Tuple<bool, string> providedData = verifier.DynamicInvoke(password) as Tuple<bool, string>;
+                if (providedData.Item1 == false)
+                    return Tuple.Create(false, providedData.Item2);
+            }
+
+            repository.Create(password);
+
+            return Tuple.Create(true, "Password is Ok. User was created");
+
+        }
+
+        private Tuple<bool, string> DefaultVerifier(string password)
         {
             if (password == null)
                 throw new ArgumentException($"{password} is null arg");

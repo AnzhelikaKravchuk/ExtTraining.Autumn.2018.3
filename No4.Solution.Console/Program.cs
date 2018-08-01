@@ -10,6 +10,11 @@ namespace No4.Solution.Console
     {
         static void Main(string[] args)
         {
+            IRandomFileGenerator generator = new RandomBytesFileGenerator();
+            generator.GenerateFiles(2,34);
+
+            generator = new RandomCharsFileGenerator();
+            generator.GenerateFiles(1, 53);
         }
     }
 }

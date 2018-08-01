@@ -40,7 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IGenarator.cs" />
+    <Compile Include="NumericGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FirstGenerator.cs" />
+    <Compile Include="SecondGenerator.cs" />
+    <Compile Include="ThirdGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="No6.txt" />
