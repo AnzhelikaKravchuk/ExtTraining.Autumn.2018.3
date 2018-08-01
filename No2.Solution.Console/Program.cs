@@ -11,10 +11,15 @@ namespace No2.Solution.Console
         static void Main(string[] args)
         {
             WeatherData weatherData = new WeatherData();
-            weatherData.Register(new CurrentConditionsReport());
-            weatherData.Register(new StatisticReport());
-            weatherData.Register(new ForeCastReport());
-            weatherData.MeasurementsChange(12, 23, 567);
+            StatisticReport statisticReport = new StatisticReport();
+            ForeCastReport foreCastReport = new ForeCastReport();
+            CurrentConditionsReport currentConditionsReport = new CurrentConditionsReport();
+
+            statisticReport.Register(weatherData);
+            foreCastReport.Register(weatherData);
+            currentConditionsReport.Register(weatherData);
+
+            weatherData.MeasurementsChange(12, 32, 44);
         }
     }
 }

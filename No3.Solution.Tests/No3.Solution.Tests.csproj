@@ -50,9 +50,6 @@
     <Compile Include="TestCalculator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\No3.Solution\No3.Solution.csproj">
       <Project>{a3dba566-369c-4124-81ad-1eb73b7d6875}</Project>
       <Name>No3.Solution</Name>
@@ -61,6 +58,12 @@
       <Project>{4dd1ea66-e5c7-453c-ba40-1b5b476ff059}</Project>
       <Name>No3</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
