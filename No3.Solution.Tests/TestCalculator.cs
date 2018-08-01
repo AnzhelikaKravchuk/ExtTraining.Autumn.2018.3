@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
+using No3.Solution;
 
 namespace No3.Solution.Tests
 {
@@ -28,6 +29,50 @@ namespace No3.Solution.Tests
             double expected = 8.0;
 
             double actual = calculator.CalculateAverage(values, AveragingMethod.Median);
+
+            Assert.AreEqual(expected, actual, 0.000001);
+        }
+
+        [Test]
+        public void Test_AverageByMedian_ByDelegate()
+        {
+            double expected = 8.0;
+
+            double actual = DelegateCalculator.MethodMedian(values);
+
+            Assert.AreEqual(expected, actual, 0.000001);
+        }
+
+        [Test]
+        public void Test_AverageByMean_ByDelegate()
+        {
+            double expected = 8.3636363;
+
+            double actual = DelegateCalculator.MethodMean(values);
+
+            Assert.AreEqual(expected, actual, 0.000001);
+        }
+
+        [Test]
+        public void Test_AverageByMedian_ByInterface()
+        {
+            InterfaceCalculator interfaceCalculator = new InterfaceCalculator();
+
+            double expected = 8.0;
+
+            double actual = interfaceCalculator.MethodMedian(values);
+
+            Assert.AreEqual(expected, actual, 0.000001);
+        }
+
+        [Test]
+        public void Test_AverageByMean_ByInterface()
+        {
+            InterfaceCalculator interfaceCalculator = new InterfaceCalculator();
+
+            double expected = 8.3636363;
+
+            double actual = interfaceCalculator.MethodMean(values);
 
             Assert.AreEqual(expected, actual, 0.000001);
         }
