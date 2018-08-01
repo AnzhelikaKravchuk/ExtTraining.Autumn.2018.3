@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace No4.Solution.Console
+﻿namespace No4.Solution.Console
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            RandomFileGenerator charFile = new RandomCharsFileGenerator();
+
+            charFile.GenerateFiles(1, 5);
+
+            RandomFileGenerator bytesFile = new RandomBytesFileGenerator();
+
+            bytesFile.GenerateFiles(1, 5);
         }
     }
 }

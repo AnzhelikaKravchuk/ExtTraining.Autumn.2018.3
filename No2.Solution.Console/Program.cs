@@ -1,20 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace No2.Solution.Console
+﻿namespace No2.Solution.Console
 {
-    class Program
+    using Console = System.Console;
+
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             WeatherData weatherData = new WeatherData();
-            weatherData.Register(new CurrentConditionsReport());
-            weatherData.Register(new StatisticReport());
-            weatherData.Register(new ForeCastReport());
+
+            var curReport = new CurrentConditionsReport();
+            var statReport = new StatisticReport();
+            var foreCastReport = new ForeCastReport();
+
+            curReport.Subscribe(weatherData);
+            statReport.Subscribe(weatherData);
+            foreCastReport.Subscribe(weatherData);
+
             weatherData.MeasurementsChange(12, 23, 567);
+
+            Console.ReadKey();
         }
     }
 }
