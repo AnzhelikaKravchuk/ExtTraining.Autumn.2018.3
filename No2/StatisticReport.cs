@@ -8,7 +8,6 @@ namespace No2
 {
     public class StatisticReport : IObserver
     {
-        public void Update(IObservable sender, WeatherInfo info)
-            => Console.WriteLine("Statistic");
+        public void Update(IObservable sender, WeatherInfo info) => Console.WriteLine("Statistic");
     }
 }

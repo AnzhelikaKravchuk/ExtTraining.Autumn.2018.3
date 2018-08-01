@@ -8,7 +8,6 @@ namespace No2
 {
     public class CurrentConditionsReport : IObserver
     {
-        public void Update(IObservable sender, WeatherInfo info)
-            => Console.WriteLine("CurrentConditions");
+        public void Update(IObservable sender, WeatherInfo info) => Console.WriteLine("CurrentConditions");
     }
 }
