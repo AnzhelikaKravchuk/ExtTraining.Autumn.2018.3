@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
+using No3.Solution;
 
 namespace No3.Solution.Tests
 {
@@ -13,11 +14,10 @@ namespace No3.Solution.Tests
         {
             Calculator calculator = new Calculator();
 
-            double expected = 8.3636363;
+            double expected = 8.3636363;         
 
-            double actual = calculator.CalculateAverage(values, AveragingMethod.Mean);
-
-            Assert.AreEqual(expected, actual, 0.000001);
+            Assert.AreEqual(expected, calculator.CalculateAverage(values, new AvarageMean()), 0.000001);
+            Assert.AreEqual(expected, calculator.CalculateAverage(values, new AvarageMeanStrategy()), 0.000001);
         }
 
         [Test]
@@ -27,9 +27,10 @@ namespace No3.Solution.Tests
 
             double expected = 8.0;
 
-            double actual = calculator.CalculateAverage(values, AveragingMethod.Median);
+            double actual = calculator.CalculateAverage(values, new MedianMean());
 
-            Assert.AreEqual(expected, actual, 0.000001);
+            Assert.AreEqual(expected, calculator.CalculateAverage(values, new MedianMean()), 0.000001);
+            Assert.AreEqual(expected, calculator.CalculateAverage(values, new MedianMeanStrategy()), 0.000001);
         }
     }
 }

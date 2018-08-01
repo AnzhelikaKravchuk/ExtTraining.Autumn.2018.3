@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace No5
 {
@@ -13,6 +14,12 @@ namespace No5
             {
                 throw new ArgumentNullException(nameof(parts));
             }
+
+            if (!parts.Any())
+            {
+                throw new ArgumentException(nameof(parts));
+            }
+
             this.parts = new List<DocumentPart>(parts);
         }
 

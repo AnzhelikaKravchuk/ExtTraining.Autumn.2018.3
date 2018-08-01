@@ -40,7 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Reports\CurrentConditionsReport.cs" />
+    <Compile Include="Reports\ForeCastReport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\StatisticReport.cs" />
+    <Compile Include="WeatherData.cs" />
+    <Compile Include="WeatherArgs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

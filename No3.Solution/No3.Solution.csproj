@@ -40,7 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Strategy pattern solution\AvarageMeanStrategy.cs" />
+    <Compile Include="Strategy pattern solution\IAvarageCalculator.cs" />
+    <Compile Include="Strategy pattern solution\MedianMeanStrategy.cs" />
+    <Compile Include="Polymorphism solution\AvarageMean.cs" />
+    <Compile Include="Polymorphism solution\CalculateAvarage.cs" />
+    <Compile Include="Calculator.cs" />
+    <Compile Include="Polymorphism solution\MedianMean.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
