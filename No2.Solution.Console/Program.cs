@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 namespace No2.Solution.Console
 {
+    using System;
     class Program
     {
         static void Main(string[] args)
         {
-            WeatherData weatherData = new WeatherData();
-            weatherData.Register(new CurrentConditionsReport());
-            weatherData.Register(new StatisticReport());
-            weatherData.Register(new ForeCastReport());
-            weatherData.MeasurementsChange(12, 23, 567);
+            WeatherDataManager manager = new WeatherDataManager();
+            var forCast = new ForeCastReport(manager);
+            var statistic = new StatisticReport(manager);
+            var currentCondition = new CurrentConditionsReport(manager);
+
+            manager.MeasurementsChange(21, 43, 78);
+            Console.ReadKey();
         }
     }
 }
