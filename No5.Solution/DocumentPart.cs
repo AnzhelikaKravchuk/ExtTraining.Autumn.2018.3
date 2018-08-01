@@ -1,4 +1,4 @@
-﻿namespace No5
+﻿namespace No5.Solution
 {
     public abstract class DocumentPart
     {

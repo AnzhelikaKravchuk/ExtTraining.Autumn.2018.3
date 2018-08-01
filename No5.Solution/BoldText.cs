@@ -1,5 +1,7 @@
 ﻿
-namespace No5
+using System;
+
+namespace No5.Solution
 {
     public class BoldText : DocumentPart
     {

@@ -3,27 +3,15 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace No4
+namespace No4.Solution
 {
-    public class RandomCharsFileGenerator
+    public class RandomCharsFileGenerator : RandomFileGenerator
     {
-        public string WorkingDirectory => "Files with random chars";
+        public override string WorkingDirectory => "Files with random chars";
 
-        public string FileExtension => ".txt";
+        public override string FileExtension => ".txt";
 
-        public void GenerateFiles(int filesCount, int contentLength)
-        {
-            for (var i = 0; i < filesCount; ++i)
-            {
-                var generatedFileContent = this.GenerateFileContent(contentLength);
-
-                var generatedFileName = $"{Guid.NewGuid()}{this.FileExtension}";
-
-                this.WriteBytesToFile(generatedFileName, generatedFileContent);
-            }
-        }
-
-        private byte[] GenerateFileContent(int contentLength)
+        protected override byte[] GenerateFileContent(int contentLength)
         {
             var generatedString = this.RandomString(contentLength);
 
@@ -43,7 +31,7 @@ namespace No4
             return new string(chars.ToArray());
         }
 
-        private void WriteBytesToFile(string fileName, byte[] content)
+        protected override void WriteBytesToFile(string fileName, byte[] content)
         {
             if (!Directory.Exists(WorkingDirectory))
             {
