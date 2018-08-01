@@ -40,7 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Events\DoubleListEventArgs.cs" />
+    <Compile Include="Events\EventCalculator.cs" />
+    <Compile Include="Events\MeanEvent.cs" />
+    <Compile Include="Events\MedianEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="State Pattern\IAveragingMethod.cs" />
+    <Compile Include="State Pattern\Calculator.cs" />
+    <Compile Include="State Pattern\MeanMethod.cs" />
+    <Compile Include="State Pattern\MedianMethod.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
