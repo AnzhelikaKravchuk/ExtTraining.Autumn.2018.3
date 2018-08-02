@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace No3.Solution
 {
@@ -10,7 +7,7 @@ namespace No3.Solution
     {
         private readonly IAverageFinder parent;
 
-        public AverageFinderDecorator(IAverageFinder parent)
+        protected AverageFinderDecorator(IAverageFinder parent)
         {
             this.parent = parent ?? throw new ArgumentNullException();
         }

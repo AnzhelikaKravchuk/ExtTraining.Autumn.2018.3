@@ -25,18 +25,17 @@ namespace No5.Solution.Console
             {
                 Text = "bold valera chadovich"
             };
+            
+            Document document = new Document(new DocumentPart[] {plain, link, bold});
 
-            var a = plain.ToBase64();
-            var b = link.ToBase64();
-            var c = bold.ToBase64();
-
-            System.Console.WriteLine(plain.ToBase64());
-            System.Console.WriteLine(link.ToBase64());
-            System.Console.WriteLine(bold.ToBase64());
-
-            System.Console.WriteLine(Convert.FromBase64String(a).Select(n => (char)n).ToArray());
-            System.Console.WriteLine(Convert.FromBase64String(b).Select(n => (char)n).ToArray());
-            System.Console.WriteLine(Convert.FromBase64String(c).Select(n => (char)n).ToArray());
+            System.Console.WriteLine("Base64:");
+            System.Console.WriteLine(document.ToBase64());
+            System.Console.WriteLine("HTML:");
+            System.Console.WriteLine(document.ToHtml());
+            System.Console.WriteLine("LaTeX:");
+            System.Console.WriteLine(document.ToLaTeX());
+            System.Console.WriteLine("Plain Text:");
+            System.Console.WriteLine(document.ToPlainText());
 
             System.Console.ReadKey();
         }

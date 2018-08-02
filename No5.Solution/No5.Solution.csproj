@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base64DocumentPartVisitor.cs" />
+    <Compile Include="DocumentHelper.cs" />
     <Compile Include="DocumentPartHelper.cs" />
     <Compile Include="DocumentPartVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
