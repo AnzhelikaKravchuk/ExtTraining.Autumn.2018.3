@@ -5,7 +5,7 @@ namespace No5
 {
     public class Document
     {
-        private List<DocumentPart> parts;
+        private readonly List<DocumentPart> parts;
 
         public Document(IEnumerable<DocumentPart> parts)
         {
@@ -16,40 +16,9 @@ namespace No5
             this.parts = new List<DocumentPart>(parts);
         }
 
-        public string ToHtml()
+        public IEnumerable<DocumentPart> GetParts()
         {
-            string output = string.Empty;
-
-            foreach (DocumentPart part in this.parts)
-            {
-                output += $"{part.ToHtml()}\n";
-            }
-
-            return output;
-        }
-
-        public string ToPlainText()
-        {
-            string output = string.Empty;
-
-            foreach (DocumentPart part in this.parts)
-            {
-                output += $"{part.ToPlainText()}\n";
-            }
-
-            return output;
-        }
-
-        public string ToLaTeX()
-        {
-            string output = string.Empty;
-
-            foreach (DocumentPart part in this.parts)
-            {
-                output += $"{part.ToLaTeX()}\n";
-            }
-
-            return output;
+            return parts.ToArray();
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿
-namespace No5
+﻿namespace No5
 {
     public class BoldText : DocumentPart
     {

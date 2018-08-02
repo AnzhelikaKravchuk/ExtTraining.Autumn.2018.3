@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WeatherData = No2.Solution.WeatherData;
 
 namespace No2.Solution.Console
 {
@@ -10,11 +12,16 @@ namespace No2.Solution.Console
     {
         static void Main(string[] args)
         {
-            WeatherData weatherData = new WeatherData();
-            weatherData.Register(new CurrentConditionsReport());
-            weatherData.Register(new StatisticReport());
-            weatherData.Register(new ForeCastReport());
-            weatherData.MeasurementsChange(12, 23, 567);
+            WeatherData data = new WeatherData();
+
+            var a = new ForeCastReport();
+            var b = new CurrentConditionsReport();
+
+            data.MeasurementsChanged += (sender, eventArgs) => a.Update(eventArgs.Info);
+            data.MeasurementsChanged += (sender, eventArgs) => b.Update(eventArgs.Info);
+
+            data.ClearData(4, 5, 7);
+            System.Console.ReadKey();
         }
     }
 }

@@ -7,8 +7,10 @@ namespace No1
     {
         private SqlRepository repository = new SqlRepository();
 
+        // ввести пароль
         public Tuple<bool, string> VerifyPassword(string password)
         {
+            #region Проверка
             if (password == null)
                 throw new ArgumentException($"{password} is null arg");
 
@@ -30,10 +32,17 @@ namespace No1
             // check if password conatins at least one digit character 
             if (!password.Any(char.IsNumber))
                 return Tuple.Create(false, $"{password} hasn't digits");
+            #endregion
 
+            #region Запись в хранилище
             repository.Create(password);
+            #endregion
+
+            #region Сообщение пользователю - UI
 
             return Tuple.Create(true, "Password is Ok. User was created");
+
+            #endregion
         }
     }
 }

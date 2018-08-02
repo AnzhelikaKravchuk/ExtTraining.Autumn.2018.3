@@ -40,7 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base64DocumentPartVisitor.cs" />
+    <Compile Include="DocumentHelper.cs" />
+    <Compile Include="DocumentPartHelper.cs" />
+    <Compile Include="DocumentPartVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\No5\No5.csproj">
+      <Project>{f1d4087e-e149-44bd-a619-6234ee35a702}</Project>
+      <Name>No5</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
