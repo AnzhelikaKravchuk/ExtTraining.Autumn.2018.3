@@ -8,13 +8,12 @@ namespace No4.Solution.Console
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Generator randomBytes = new RandomBytesGenerator();
-            Generator randomChars = new RandomCharGenerator();
-            Saver saver = new Saver();
-
-            saver.Save("Files with random chars", randomBytes.GenerateBytes(1, 10));
+            RandomCharGenerator Char = new RandomCharGenerator();
+            RandomBytesGenerator Bytes = new RandomBytesGenerator();
+            Char.GenerateFiles(2, 3);
+            Bytes.GenerateFiles(2,3);
         }
     }
 }

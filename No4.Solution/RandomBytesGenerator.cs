@@ -8,15 +8,15 @@ namespace No4.Solution
 {
     public class RandomBytesGenerator : Generator
     {
-        protected override byte[] GenerateFile(int length)
+        protected override byte[] GenerateFileContent(int contentLength)
         {
             var random = new Random();
 
-            var file = new byte[length];
+            var fileContent = new byte[contentLength];
 
-            random.NextBytes(file);
+            random.NextBytes(fileContent);
 
-            return file;
+            return fileContent;
         }
     }
 }

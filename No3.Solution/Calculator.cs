@@ -4,13 +4,22 @@ using System.Linq;
 
 namespace No3
 {
-    public class Calculator
+    public static class Calculator
     {
-        public double Calculate(List<double> values, IAveragingMethod method)
+        public static double Calculate(List<double> values, IAveragingMethod method)
         {
             return method.Perform(values);
         }
-        private void Validate(List<double> values, IAveragingMethod method)
+        public static double Calculate(this IEnumerable<double> agregate, Func<List<double>, double> func)
+        {
+            if (func == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            return func(agregate.ToList());
+        }
+        private static void Validate(List<double> values, IAveragingMethod method)
         {
             if (values == null)
             {

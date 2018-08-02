@@ -13,10 +13,9 @@ namespace No3.Solution.Tests
         [Test]
         public void Test_AverageByMean()
         {
-            Calculator calc = new Calculator();
             double expected = 8.3636363;
 
-            double actual = calc.Calculate(values, new Mean());
+            double actual = Calculator.Calculate(values, new Mean());
 
             Assert.AreEqual(expected, actual, 0.000001);
         }
@@ -24,11 +23,9 @@ namespace No3.Solution.Tests
         [Test]
         public void Test_AverageByMedian()
         {
-            Calculator calc = new Calculator();
-
             double expected = 8.0;
 
-            double actual = calc.Calculate(values, new Median());
+            double actual = Calculator.Calculate(values, new Median());
 
             Assert.AreEqual(expected, actual, 0.000001);
         }

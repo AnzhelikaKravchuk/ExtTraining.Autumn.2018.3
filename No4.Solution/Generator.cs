@@ -1,24 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace No4.Solution
 {
-    abstract public class Generator
+    public abstract class Generator
     {
-        private byte[] _gen;
-        public byte[] GenerateBytes(int filesCount, int contentLength)
+        public void GenerateFiles(int filesCount, int contentLength)
         {
-            for (var i = 0; i < filesCount; i++)
+            for (var i = 0; i < filesCount; ++i)
             {
-                _gen = GenerateFile(contentLength);
+                var generatedFileContent = GenerateFileContent(contentLength);
+                var generatedFileName = $"{Guid.NewGuid()}{FileExtension}";
+                WriteBytesToFile(generatedFileName, generatedFileContent);
             }
-
-            return _gen;
         }
 
-        protected abstract byte[] GenerateFile(int contentLength);
+        protected abstract byte[] GenerateFileContent(int contentLength);
+
+        private void WriteBytesToFile(string fileName, byte[] content)
+        {
+            if (!Directory.Exists(WorkingDirectory))
+            {
+                Directory.CreateDirectory(WorkingDirectory);
+            }
+
+            File.WriteAllBytes($"{WorkingDirectory}//{fileName}", content);
+        }
+        private string FileExtension { get; }
+        private string WorkingDirectory { get; }
     }
 }
