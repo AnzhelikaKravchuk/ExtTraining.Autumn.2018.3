@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="CurrentConditionsReport.cs" />
     <Compile Include="ForeCastReport.cs" />
-    <Compile Include="IReport.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

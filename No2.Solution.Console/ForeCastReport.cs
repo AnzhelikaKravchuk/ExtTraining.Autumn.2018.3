@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace No2.Solution.Console
 {
-    public class ForeCastReport : IReport
+    public class ForeCastReport
     {
         public void Update(WeatherInfo info)
         {

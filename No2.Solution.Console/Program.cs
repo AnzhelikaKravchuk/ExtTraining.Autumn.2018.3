@@ -14,14 +14,11 @@ namespace No2.Solution.Console
         {
             WeatherData data = new WeatherData();
 
-            List<IReport> reports = new List<IReport>();
-            reports.Add(new ForeCastReport());
-            reports.Add(new CurrentConditionsReport());
+            var a = new ForeCastReport();
+            var b = new CurrentConditionsReport();
 
-            foreach (var item in reports)
-            {
-                data.MeasurementsChanged += (sender, eventArgs) => item.Update(eventArgs.Info);
-            }
+            data.MeasurementsChanged += (sender, eventArgs) => a.Update(eventArgs.Info);
+            data.MeasurementsChanged += (sender, eventArgs) => b.Update(eventArgs.Info);
 
             data.ClearData(4, 5, 7);
             System.Console.ReadKey();
