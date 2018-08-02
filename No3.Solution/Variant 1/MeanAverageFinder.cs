@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace No3.Solution
+namespace No3.Solution.Variant_1
 {
-    public class MeanAverageFinder : IAverageFinder
+    public class MeanAlgorithmSolver : IAlgorithmSolver
     {
         public double Find(IEnumerable<double> values)
         {

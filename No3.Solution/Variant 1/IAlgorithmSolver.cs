@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace No3.Solution
+namespace No3.Solution.Variant_1
 {
-    public interface IAverageFinder
+    public interface IAlgorithmSolver
     {
         double Find(IEnumerable<double> values);
     }
