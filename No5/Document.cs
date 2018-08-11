@@ -13,6 +13,7 @@ namespace No5
             {
                 throw new ArgumentNullException(nameof(parts));
             }
+
             this.parts = new List<DocumentPart>(parts);
         }
 

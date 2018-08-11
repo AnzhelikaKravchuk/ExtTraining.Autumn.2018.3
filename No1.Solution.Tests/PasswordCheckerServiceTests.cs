@@ -7,13 +7,18 @@ namespace No1.Solution.Tests
     [TestFixture]
     class PasswordCheckerServiceTests
     {
-        [Test]
-        public void VerifyPassword_Vaild()
+        [TestCase(("123456789a"), ExpectedResult = true)]
+        [TestCase(("y4$123456789a"), ExpectedResult = true)]
+        [TestCase(("123456789"), ExpectedResult = false)]
+        [TestCase(("123456789123456789"), ExpectedResult = false)]
+        [TestCase(("12345"), ExpectedResult = false)]
+        [TestCase(("aftryeidj"), ExpectedResult = false)]
+        [TestCase(("aftryeidjffjldhgjfhgfhgkjffg"), ExpectedResult = false)]
+        [TestCase((""), ExpectedResult = false)]
+        [TestCase((null), ExpectedResult = false)]
+        public bool VerifyPassword(string password)
         {
-            string password = "123456789";
-            PasswordCheckerService passwordChecker = new PasswordCheckerService();
-            //Logger logger = passwordChecker.VerifyPassword(password).Item2;
-            Assert.True(passwordChecker.VerifyPassword(password).Item1);
+            return new PasswordCheckerService().VerifyPassword(password);
         }
     }
 }

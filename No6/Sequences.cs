@@ -6,7 +6,7 @@ namespace No6
 {
     public static class Sequences
     {
-        public static T[] SequenceGenerator<T>(T a, T b, Func<T, T, T> func, int n)
+        public static IEnumerable<T> SequenceGenerator<T>(T a, T b, Func<T, T, T> func, int n)
         {
             T[] result = new T[n];
             result[0] = a;

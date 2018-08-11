@@ -7,18 +7,21 @@ namespace No1.Solution
     public class PasswordCheckerService
     {
         private IRepository repository;
+        private ILogger logger;
 
         public PasswordCheckerService()
         {
             repository = new SqlRepository();
+            logger = new Logger();
         }
 
-        public Tuple<bool, Logger> VerifyPassword(string password)
+        public bool VerifyPassword(string password)
         {
-            Logger logger = LogManager.GetCurrentClassLogger();
-
             if (password == null)
+            {
                 logger.Warn($"{password} is null arg");
+                return false;
+            }
 
             if (password == string.Empty)
                 logger.Warn($"{password} is empty ");
@@ -41,12 +44,12 @@ namespace No1.Solution
 
             if (logger.IsWarnEnabled)
             {
-                return Tuple.Create(false, logger);
+                return false;
             }
 
             repository.Create(password);
             logger.Info("Password is Ok. User was created");
-            return Tuple.Create(true, logger);
+            return true;
         }
 
     }

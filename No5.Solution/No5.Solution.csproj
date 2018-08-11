@@ -41,8 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoldText.cs" />
+    <Compile Include="Converter.cs" />
+    <Compile Include="Document.cs" />
+    <Compile Include="DocumentConvert.cs" />
     <Compile Include="DocumentPart.cs" />
     <Compile Include="Hyperlink.cs" />
+    <Compile Include="IDocumentPartVisitor.cs" />
     <Compile Include="PlainText.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
