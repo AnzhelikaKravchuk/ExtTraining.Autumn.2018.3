@@ -40,7 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="v1\IAvaragingMethod.cs" />
+    <Compile Include="v1\MeanAvaragingMethod.cs" />
+    <Compile Include="v1\MedianAvaragingMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="v2\Calculator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

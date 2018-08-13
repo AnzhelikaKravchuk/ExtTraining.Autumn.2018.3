@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
+using No3.Solution;
+using System;
 
 namespace No3.Solution.Tests
 {
@@ -11,11 +13,11 @@ namespace No3.Solution.Tests
         [Test]
         public void Test_AverageByMean()
         {
-            Calculator calculator = new Calculator();
+            IAvaragingMethod method = new MeanAvaragingMethod();
 
             double expected = 8.3636363;
 
-            double actual = calculator.CalculateAverage(values, AveragingMethod.Mean);
+            double actual = method.CalculateAvarage(values);
 
             Assert.AreEqual(expected, actual, 0.000001);
         }
@@ -23,13 +25,27 @@ namespace No3.Solution.Tests
         [Test]
         public void Test_AverageByMedian()
         {
-            Calculator calculator = new Calculator();
+            IAvaragingMethod method = new MedianAvaragingMethod();
 
             double expected = 8.0;
 
-            double actual = calculator.CalculateAverage(values, AveragingMethod.Median);
+            double actual = method.CalculateAvarage(values);
 
             Assert.AreEqual(expected, actual, 0.000001);
+        }
+
+        [Test]
+        public void Test_AverageByMean_Exception()
+        {
+            IAvaragingMethod method = new MeanAvaragingMethod();
+            Assert.Throws<ArgumentNullException>(() => method.CalculateAvarage(null));
+        }
+
+        [Test]
+        public void Test_AverageByMedian_Exception()
+        {
+            IAvaragingMethod method = new MedianAvaragingMethod();
+            Assert.Throws<ArgumentNullException>(() => method.CalculateAvarage(null));
         }
     }
 }
