@@ -3,9 +3,9 @@ using System;
 
 namespace No2
 {
-    public class StatisticReport : IObserver
+    public class StatisticReport : BaseWeatherListener
     {
-        public void WeatherChanged(object sender, WeatherArgs e)
+        internal override void ExecuteChanges(object sender, WeatherArgs e)
         {
             Console.WriteLine($"StatisticReport: {e.Humidity}");
         }

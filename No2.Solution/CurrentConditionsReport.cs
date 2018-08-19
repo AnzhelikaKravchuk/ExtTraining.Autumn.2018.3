@@ -3,9 +3,9 @@ using System;
 
 namespace No2
 {
-    public class CurrentConditionsReport : IObserver
+    public class CurrentConditionsReport : BaseWeatherListener
     {
-        public void WeatherChanged(object sender, WeatherArgs e)
+        internal override void ExecuteChanges(object sender, WeatherArgs e)
         {
             Console.WriteLine($"CurrentConditionsReport: {e.Temperature}");
         }
