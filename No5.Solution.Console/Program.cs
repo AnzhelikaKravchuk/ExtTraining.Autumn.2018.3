@@ -11,13 +11,15 @@ namespace No5.Solution.Console
                 Text = "smth"
             };
 
-            List<TextDecorator> textTypes = new List<TextDecorator>();
+            var textTypes = new List<DocumentPart>();
 
-            textTypes.Add(new BoldHyperLinkDecorator(boldText));
+            textTypes.Add(boldText);
 
             var document = new Document(textTypes);
 
-            System.Console.WriteLine(document.ConvertTo());
+            System.Console.WriteLine(document.ToHtml());
+            System.Console.WriteLine(document.ToLaTeX());
+            System.Console.WriteLine(document.ToPlainText());
 
             System.Console.ReadLine();
         }
