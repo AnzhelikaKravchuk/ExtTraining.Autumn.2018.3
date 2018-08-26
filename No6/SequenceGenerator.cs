@@ -1,25 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace No6
 {
     public static class SequenceGenerator
     {
-        public static IEnumerable<T> Generate<T>(T firstElement, T secondElement, int count, Func<T, T, T> func)
+        public static IEnumerable<T> Generate<T>(T firstElement, T secondElement, int n, Func<T, T, T> func)
         {
-            T value = func(firstElement, secondElement);
-
-            T oldValue = secondElement;
-
-            while (count > 0)
+            if (func == null)
             {
-                yield return value;
+                throw new ArgumentNullException(nameof(func));
+            }
 
-                oldValue = value;
-                value = func(oldValue, secondElement);
+            yield return firstElement;
+            yield return secondElement;
+
+            T value;
+
+            if (n > 2)
+            {
+                while (n > 0)
+                {
+                    value = func(secondElement, firstElement);
+
+                    yield return value;
+
+                    firstElement = secondElement;
+                    secondElement = value;
+
+                    n--;
+                }
             }
         }
     }
