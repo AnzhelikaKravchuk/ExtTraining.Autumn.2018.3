@@ -1,0 +1,1 @@
+Была выделена абстракция RandomFileGenerator, содержащая методы GenerateFiles и WriteBytesToFile, а также абстрактный метод GenerateFileContent, который реализуется в наследуемых от RandomFileGenerator классах RandomCharsFileGenerator и RandomBytesFileGenerator.
