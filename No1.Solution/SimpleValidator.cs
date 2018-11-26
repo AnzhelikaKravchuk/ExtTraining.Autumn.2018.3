@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Linq;
 
-namespace No1
+namespace No1.Solution
 {
-    public class PasswordCheckerService
+    public class SimpleValidator : IPasswordValidator
     {
-        private readonly SqlRepository repository;
-
-        public (bool, string) VerifyPassword(string password)
+        public (bool, string) Validate(string password)
         {
             if (password == null)
                 throw new ArgumentException($"{password} is null arg");
@@ -30,8 +28,6 @@ namespace No1
             // check if password contains at least one digit character 
             if (!password.Any(char.IsNumber))
                 return (false, $"{password} hasn't digits");
-
-            repository.Create(password);
 
             return (true, "Password is Ok. User was created");
         }
