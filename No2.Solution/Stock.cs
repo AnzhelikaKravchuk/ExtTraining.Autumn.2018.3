@@ -15,6 +15,9 @@ namespace No2.Solution
             this.stockInfo = stockInfo;
         }
 
+        /// <summary>
+        /// Occurs when stock information changed.
+        /// </summary>
         public event EventHandler<StockInfoChangeEventsArgs> StockInfoChanged = delegate { };
 
         public void Market()
@@ -25,6 +28,10 @@ namespace No2.Solution
             OnStockInfoChanged(stockInfo);
         }
 
+        /// <summary>
+        /// Triggers an event.
+        /// </summary>
+        /// <param name="info">The information.</param>
         protected virtual void OnStockInfoChanged(StockInfoChangeEventsArgs info)
         {
             StockInfoChanged(this, info);
