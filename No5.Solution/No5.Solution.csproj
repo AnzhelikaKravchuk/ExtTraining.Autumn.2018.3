@@ -40,6 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DocumentTransformer.cs" />
+    <Compile Include="Document.cs" />
+    <Compile Include="DocumentPart.cs" />
+    <Compile Include="DocumentPartModifier.cs" />
+    <Compile Include="modifiers\BoldText.cs" />
+    <Compile Include="modifiers\Hyperlink.cs" />
+    <Compile Include="modifiers\PlainText.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -53,6 +53,10 @@
       <Project>{9c641917-6bd2-40b2-87f5-9de26088238a}</Project>
       <Name>No5.Solution</Name>
     </ProjectReference>
+    <ProjectReference Include="..\No5\No5.csproj">
+      <Project>{F1D4087E-E149-44BD-A619-6234EE35A702}</Project>
+      <Name>No5</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
