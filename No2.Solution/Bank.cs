@@ -2,6 +2,8 @@
 
 namespace No2.Solution
 {
+    // Переработать имплементацию событий, заточенную под .net
+
     /// <summary>
     /// Class imitates bank work processing
     /// </summary>

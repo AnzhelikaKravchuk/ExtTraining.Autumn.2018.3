@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace No1
 {
+    // Использован паттерн стратегия
+    //Код не расширяем, завязан на конкретный тип пароля, конкретный репозиторий для сохранения
+    // добавлены абстаркции в виде интерфейсов 
     public class PasswordCheckerService : IPasswordCheckerService<string>
     {
         private readonly IRepository repository;
