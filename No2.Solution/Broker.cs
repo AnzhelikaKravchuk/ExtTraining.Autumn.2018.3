@@ -10,9 +10,15 @@ namespace No2.Solution
     {
         public string Name { get; set; }
 
-        public Broker(string name)
+        public Broker(string name,IObservable observable)
         {
             this.Name = name;
+            if (observable == null)
+            {
+                throw new ArgumentNullException($"{nameof(observable)} is null reference");
+            }
+
+            observable.Register(this);
         }
 
         public void Unregister(Stock stock)
