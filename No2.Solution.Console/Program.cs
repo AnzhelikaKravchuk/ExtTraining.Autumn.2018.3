@@ -10,13 +10,13 @@ namespace No2.Solution.Console
     {
         static void Main(string[] args)
         {
-            var stock = new Stock();
+            var manager = new StockInfoManager();
 
-            var bank = new Bank("Bank", stock);
-            var broker = new Broker("Broker", stock);
+            var bank = new Bank("Bank 1", manager);
+            var broker = new Broker("Broker 1", manager);
 
-            stock.Register(bank);
-            stock.Register(broker);
+            var stock = new Stock(manager);
+
             stock.Market();
 
             System.Console.ReadLine();

@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="CustomEnumerableTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SequenceGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
