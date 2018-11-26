@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AveragingMethodMean.cs" />
+    <Compile Include="AveragingMethodMediancs.cs" />
+    <Compile Include="Calculator.cs" />
+    <Compile Include="ICalculate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

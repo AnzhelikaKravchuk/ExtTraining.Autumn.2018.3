@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using No2.Solution;
 
 namespace No2.Solution.Console
 {
@@ -12,8 +13,8 @@ namespace No2.Solution.Console
         {
             var stock = new Stock();
 
-            var bank = new Bank("Bank", stock);
-            var broker = new Broker("Broker", stock);
+            var bank = new No2.Solution.Bank("Bank", stock);
+            var broker = new No2.Solution.Broker("Broker", stock);
 
             stock.Register(bank);
             stock.Register(broker);
