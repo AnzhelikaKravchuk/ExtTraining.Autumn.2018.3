@@ -18,6 +18,11 @@ namespace No1.Solution
             this.repository = repository ?? throw new ArgumentNullException($"{nameof(repository)}");
         }
 
+        public PasswordCheckerService(IRepository repository)
+        {         
+            this.repository = repository ?? throw new ArgumentNullException($"{nameof(repository)}");
+        }
+
         public void AddValidation(IPasswordValidator validator)
         {
             if (validator == null)

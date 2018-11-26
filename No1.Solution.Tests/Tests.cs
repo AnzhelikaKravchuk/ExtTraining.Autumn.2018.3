@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using No1.Solution.No1.Solution;
+using No1.Solution.Tests.Validates;
 using NUnit.Framework;
 
 namespace No1.Solution.Tests
@@ -13,9 +13,13 @@ namespace No1.Solution.Tests
         [Test]      
         public void ArrayToTextArray_ReturnsArrayOfStringsWithWordsOfDigits()
         {
-            var validator = new DefaultPasswordValidator();
+            IPasswordValidator[] validators = new IPasswordValidator[]{ new NullValidate(), new EmptyValidate(), new DigitsValidate(), new LettersValidate(), new LongValidate(),  new ShortValidate()};
             var repository=new SqlRepository();
-            PasswordCheckerService service=new PasswordCheckerService(validator,repository);
+            PasswordCheckerService service=new PasswordCheckerService(repository);
+            foreach (var validator in validators)
+            {
+                service.AddValidation(validator);
+            }
             Assert.Throws<ArgumentException>(() => service.Verify(null));
             Assert.Throws<ArgumentException>(() => service.Verify(string.Empty));
             Assert.Throws<ArgumentException>(() => service.Verify("123abc"));

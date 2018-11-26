@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PasswordCheckerService.cs" />
-    <Compile Include="DefaultPasswordValidator.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IPasswordValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

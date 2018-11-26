@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Validates\DigitsValidate.cs" />
+    <Compile Include="Validates\EmptyValidate.cs" />
+    <Compile Include="Validates\LettersValidate.cs" />
+    <Compile Include="Validates\LongValidate.cs" />
+    <Compile Include="Validates\NullValidate.cs" />
+    <Compile Include="Validates\ShortValidate.cs" />
     <Compile Include="Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
