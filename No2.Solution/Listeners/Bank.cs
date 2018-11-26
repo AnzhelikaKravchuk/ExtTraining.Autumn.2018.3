@@ -6,21 +6,74 @@ using System.Threading.Tasks;
 
 namespace No2.Solution.Listeners
 {
+    /// <summary>
+    /// Observer class.
+    /// </summary>
     public class Bank
     {
         public string Name { get; set; }
         private Stock stock;
 
+        /// <summary>
+        /// Method to create object.
+        /// </summary>
+        /// <param name="name">
+        /// Name of bank.
+        /// </param>
+        /// <param name="stock">
+        /// Object of observable class.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown when <paramref name="name"/> or <paramref name="stock"/> is null.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        /// Thrown when <paramref name="name"/> is empty.
+        /// </exception>
         public Bank(string name, Stock stock)
         {
+            if (name is null)
+            {
+                throw new ArgumentNullException(nameof(name) + ", name of bank is null.");
+            }
+
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentException(nameof(name) + " name of bank is empty.");
+            }
+
+            if (stock is null)
+            {
+                throw new ArgumentNullException(nameof(stock) + ", object of Stock is null.");
+            }
+
             this.Name = name;
             this.stock = stock;
             stock.newDataInfo += ReportNewData;
         }
 
+        /// <summary>
+        /// Method to event bank about new data.
+        /// </summary>
+        /// <param name="sender">
+        /// Object of sender class.
+        /// </param>
+        /// <param name="eventArgs">
+        /// Object with information about event.
+        /// </param>
         public void ReportNewData(object sender, EventArgs eventArgs)
         {
             Update(eventArgs);
+        }
+
+        public void UnRegister()
+        {
+            if (stock is null)
+            {
+                throw new NullReferenceException("Object of stock is already null.");
+            }
+
+            stock.newDataInfo -= ReportNewData;
+            stock = null;
         }
 
         protected virtual void Update(EventArgs info)

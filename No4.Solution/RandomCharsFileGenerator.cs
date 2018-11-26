@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace No4.Solution
 {
+    /// <summary>
+    /// Class to create random files with chars.
+    /// </summary>
     public class RandomCharsFileGenerator : AbstractGenerator
     {
         public override string WorkingDirectory => "Files with random chars";

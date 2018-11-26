@@ -4,18 +4,20 @@ using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using No1.Solution.Checkers;
+using No1.Solution.Repositories;
 
 namespace No1.Solution
 {
     public class PasswordCheckerService
     {
         private IRepository repository;
+        private IChecker checker;
 
-        public Func<string, bool> Verifier;
-
-        public PasswordCheckerService()
+        public PasswordCheckerService(IRepository repository, IChecker checker)
         {
-            repository = new SqlRepository();
+            this.repository = repository;
+            this.checker = checker;
         }
 
         public PasswordCheckerService(IRepository repository)
@@ -25,21 +27,7 @@ namespace No1.Solution
                 throw new ArgumentNullException($"{nameof(repository)}, argument repository is null.");
             }
 
-            Repository = repository;
-        }
-
-        private IRepository Repository
-        {
-            get => repository;
-            set
-            {
-                if (value is null)
-                {
-                    throw new ArgumentNullException($"{nameof(value)}. Repository argument is null.");
-                }
-
-                repository = value;
-            }
+            this.repository = repository;
         }
 
         public bool VerifyPassword(string password)
@@ -54,13 +42,28 @@ namespace No1.Solution
                throw new ArgumentException($"{nameof(password)} is empty argument.");
             }
 
-            if (Verifier(password))
+            if (checker.Check(password))
             {
-                Repository?.Create(password);
+                this.repository?.Create(password);
                 return true;
             }
 
             return false;
+        }
+
+        public void AppendCheckMethod(Func<string, bool> checkMethod)
+        {
+            checker.AppendMethod(checkMethod);
+        }
+
+        public void RemoveCheckMethod(Func<string, bool> checkMethod)
+        {
+            checker.RemoveMethod(checkMethod);
+        }
+
+        public void ClearCheckMethods(Func<string, bool> checkMethod)
+        {
+            checker.ClearMethods();
         }
     }
 }

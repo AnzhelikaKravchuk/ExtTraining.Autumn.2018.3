@@ -6,12 +6,18 @@ using System.Threading.Tasks;
 
 namespace No2.Solution
 {
+    /// <summary>
+    /// Observable class.
+    /// </summary>
     public class Stock
     {
         private StockEventArgs stocksInfo;
 
         public event EventHandler<StockEventArgs> newDataInfo = delegate { };
 
+        /// <summary>
+        /// Constructor to create object of class.
+        /// </summary>
         public Stock()
         {
             stocksInfo = new StockEventArgs();
@@ -22,6 +28,9 @@ namespace No2.Solution
             newDataInfo(this, stocksInfo);
         }
 
+        /// <summary>
+        /// Method to simulate market.
+        /// </summary>
         public void Market()
         {
             Random rnd = new Random();

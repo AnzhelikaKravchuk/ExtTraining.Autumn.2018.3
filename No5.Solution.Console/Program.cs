@@ -16,7 +16,6 @@ namespace No5.Solution.Console
                 new PlainText("3")
             });
 
-
             WriteLine(document.ConvertTo(s => s.ToHtml()));
             WriteLine(document.ConvertTo(s => s.ToLaTeX()));
             WriteLine(document.ConvertTo(s => s.ToPlainText()));

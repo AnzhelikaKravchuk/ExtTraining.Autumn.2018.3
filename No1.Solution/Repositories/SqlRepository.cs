@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace No1.Solution
+namespace No1.Solution.Repositories
 {
     public class SqlRepository : IRepository
     {

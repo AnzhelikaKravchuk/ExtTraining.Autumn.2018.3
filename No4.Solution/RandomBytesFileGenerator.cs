@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace No4.Solution
 {
+    /// <summary>
+    /// Class to create binary random files.
+    /// </summary>
     public class RandomBytesFileGenerator : AbstractGenerator
     {
         public override string WorkingDirectory => "Files with random bytes";
