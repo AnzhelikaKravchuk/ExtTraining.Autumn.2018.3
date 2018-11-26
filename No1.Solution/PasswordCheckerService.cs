@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace No1.Solution
@@ -18,11 +19,14 @@ namespace No1.Solution
     {
         public static bool CheckPassword(IRepositorable repos, string password, params Predicate<string>[] validators)
         {
+            if(password == null) { throw  new ArgumentNullException(nameof(password), "Must be not null!");}
+
             foreach (var validate in validators)
             {
+                if(validate == null) { throw  new ArgumentNullException(nameof(validate)); }
                 if (!validate(password)) { return false; }
-
             }
+
             repos.Create(password);
             return true;
         }
