@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace No2.Solution.Entities
 {
+    /// <summary>
+    /// использовал отдельный класс для всех операций банка, для самого банка, и для брокера
+    /// </summary>
     public class Trade : IObserver
     {       
         public void Update(object info)
@@ -43,6 +46,7 @@ namespace No2.Solution.Entities
             }
         }
 
+        // EventHandler для возвращаемого типа void
         public event EventHandler<TradeEventArgs> BuyMoney;
         public event EventHandler<TradeEventArgs> SellMoney;
 

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace No2.Solution.Entities
 {
+    /// <summary>
+    /// реализует функционал для банка (купить/продать)
+    /// </summary>
     public class Bank
     {
         private Trade trade;

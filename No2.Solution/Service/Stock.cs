@@ -11,7 +11,6 @@ namespace No2.Solution.Service
 {
     public class Stock : IObservable
     {
-        private Trade trade;
         private StockInfo stockInfo;
         private readonly List<IObserver> observers;
 
@@ -19,7 +18,6 @@ namespace No2.Solution.Service
         {
             observers = new List<IObserver>();
             stockInfo = new StockInfo();
-            trade = new Trade();
         }
 
         public void Notify()

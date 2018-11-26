@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace No2.Solution.Entities
 {
+    /// <summary>
+    /// реализует функционал для брокера (купить/продать)
+    /// </summary>
     class Broker
     {
         private Trade trade;
