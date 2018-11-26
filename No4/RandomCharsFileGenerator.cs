@@ -5,11 +5,12 @@ using System.Text;
 
 namespace No4
 {
-    public class RandomCharsFileGenerator
+    public class RandomCharsFileGenerator : RandomFileGenerator
     {
-        public string WorkingDirectory => "Files with random chars";
-
-        public string FileExtension => ".txt";
+        public RandomCharsFileGenerator(string workingDirectory, string fileExtension)
+        {
+            ;
+        }
 
         public void GenerateFiles(int filesCount, int contentLength)
         {

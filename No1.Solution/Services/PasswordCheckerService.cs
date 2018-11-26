@@ -1,22 +1,28 @@
-﻿using System;
+﻿using No1.Solution.Interfaces;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace No1
+namespace No1.Solution.Services
 {
-    public class PasswordCheckerService : IPasswordCheckerService<string>
+    /// <summary>
+    /// 
+    /// </summary>
+    public class PasswordCheckerService : IPasswordCheckerService<string,bool>
     {
-        private readonly IRepository repository;
+        private readonly IRepository<string> repository;
 
-        public PasswordCheckerService(IRepository repository)
+        public PasswordCheckerService(IRepository<string> repository)
         {
-            if(repository is null)
+            if (repository is null)
             {
                 throw new ArgumentNullException("Repository is null " + nameof(repository));
             }
 
             this.repository = repository;
         }
-
 
         public (bool, string) VerifyPassword(string password)
         {
