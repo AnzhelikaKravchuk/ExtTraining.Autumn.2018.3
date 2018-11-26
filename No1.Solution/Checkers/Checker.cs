@@ -17,6 +17,12 @@ namespace No1.Solution.Checkers
             checkers = new List<Func<string, bool>>();
         }
         
+        /// <summary>
+        /// Main method to check <paramref name="password"/>
+        /// </summary>
+        /// <param name="password">
+        /// Password.
+        /// </param>
         public bool Check(string password)
         {
             foreach (var checker in checkers)
