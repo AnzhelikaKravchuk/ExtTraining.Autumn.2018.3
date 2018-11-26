@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using static System.Console;
 
 namespace No2.Solution.Console
 {
@@ -12,14 +8,15 @@ namespace No2.Solution.Console
         {
             var stock = new Stock();
 
-            var bank = new Bank("Bank", stock);
-            var broker = new Broker("Broker", stock);
+            var bank = new Bank("Bank");
+            var broker = new Broker("Broker");
 
-            stock.Register(bank);
-            stock.Register(broker);
+            stock.Changed += bank.Update;
+            stock.Changed += broker.Update;
+
             stock.Market();
 
-            System.Console.ReadLine();
+            ReadLine();
         }
     }
 }
