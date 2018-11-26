@@ -3,7 +3,7 @@ using System.IO;
 
 namespace No4
 {
-    public class RandomBytesFileGenerator
+    public class RandomBytesFileGenerator : 
     {
         public string WorkingDirectory => "Files with random bytes";
 
