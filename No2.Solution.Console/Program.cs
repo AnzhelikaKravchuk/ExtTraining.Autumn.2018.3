@@ -10,14 +10,20 @@ namespace No2.Solution.Console
     {
         static void Main(string[] args)
         {
-            var stock = new Stock();
+            var stock = Stock.Instance;
 
-            var bank = new Bank("Bank", stock);
-            var broker = new Broker("Broker", stock);
+            var bank = new Bank("Bank");
+            var broker = new Broker("Broker");
 
-            stock.Register(bank);
-            stock.Register(broker);
-            stock.Market();
+            bank.Register(stock);
+            broker.Register(stock);
+
+            stock.StartWorking();
+
+            System.Console.ReadLine();
+
+            stock.StopWorking();
+
 
             System.Console.ReadLine();
         }

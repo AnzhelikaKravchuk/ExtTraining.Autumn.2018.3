@@ -1,11 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace No1
 {
-    public class PasswordCheckerService
+    public class PasswordCheckerService : IPasswordChecker
     {
-        private readonly SqlRepository repository = new SqlRepository();
+        private readonly IRepository repository;
+
+        private IEnumerable<IPasswordChecker> validators;
+
+        public PasswordCheckerService(IEnumerable<IPasswordChecker> validators)
+        {
+            this.validators = validators;
+        }
+
+        public PasswordCheckerService(IRepository repository)
+        {
+            this.repository = repository;
+        }
 
         public (bool, string) VerifyPassword(string password)
         {
@@ -35,5 +48,6 @@ namespace No1
 
             return (true, "Password is Ok. User was created");
         }
+        
     }
 }
