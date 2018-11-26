@@ -40,7 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoldText.cs" />
+    <Compile Include="Document.cs" />
+    <Compile Include="DocumentPart.cs" />
+    <Compile Include="DocumentPartConverter.cs" />
+    <Compile Include="DocumentPartConverterImplementations\DocumentPartToHtml.cs" />
+    <Compile Include="DocumentPartConverterImplementations\DocumentPartToLaTeX.cs" />
+    <Compile Include="DocumentPartConverterImplementations\DocumentPartToPlainText.cs" />
+    <Compile Include="HyperLink.cs" />
+    <Compile Include="PlainText.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
