@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace No4.Solution
 {
-    public abstract class RandomDataFileGenerator
+    public abstract class RandomBytesFileGenerator2
     {
         public string WorkingDirectory { get; }
         public string FileExtension { get; }
 
-        public RandomDataFileGenerator(string workingDirectory, string fileExtension)
+        RandomBytesFileGenerator2(string workingDirectory, string fileExtension)
         {
             WorkingDirectory = workingDirectory;
             FileExtension = fileExtension;
@@ -30,16 +29,6 @@ namespace No4.Solution
             }
         }
 
-        protected abstract byte[] GenerateFileContent(int contentLength);
-
-        private void WriteBytesToFile(string fileName, byte[] content)
-        {
-            if (!Directory.Exists(WorkingDirectory))
-            {
-                Directory.CreateDirectory(WorkingDirectory);
-            }
-
-            File.WriteAllBytes($"{WorkingDirectory}//{fileName}", content);
-        }
+        public abstract byte[] GenerateFileContent(int contentLength);
     }
 }
