@@ -1,0 +1,12 @@
+C:\Users\Виталий\Desktop\NET-Training\ExtTraining.Autumn.2018.3-master\No4.Solution\bin\Debug\No4.Solution.dll
+C:\Users\Виталий\Desktop\NET-Training\ExtTraining.Autumn.2018.3-master\No4.Solution\bin\Debug\No4.Solution.pdb
+C:\Users\Виталий\Desktop\NET-Training\ExtTraining.Autumn.2018.3-master\No4.Solution\obj\Debug\No4.Solution.csprojAssemblyReference.cache
+C:\Users\Виталий\Desktop\NET-Training\ExtTraining.Autumn.2018.3-master\No4.Solution\obj\Debug\No4.Solution.csproj.CoreCompileInputs.cache
+C:\Users\Виталий\Desktop\NET-Training\ExtTraining.Autumn.2018.3-master\No4.Solution\obj\Debug\No4.Solution.dll
+C:\Users\Виталий\Desktop\NET-Training\ExtTraining.Autumn.2018.3-master\No4.Solution\obj\Debug\No4.Solution.pdb
+C:\Users\Виталий\Desktop\NET-Training\ExtTraining.Autumn.2018.3\No4.Solution\bin\Debug\No4.Solution.dll
+C:\Users\Виталий\Desktop\NET-Training\ExtTraining.Autumn.2018.3\No4.Solution\bin\Debug\No4.Solution.pdb
+C:\Users\Виталий\Desktop\NET-Training\ExtTraining.Autumn.2018.3\No4.Solution\obj\Debug\No4.Solution.csprojAssemblyReference.cache
+C:\Users\Виталий\Desktop\NET-Training\ExtTraining.Autumn.2018.3\No4.Solution\obj\Debug\No4.Solution.csproj.CoreCompileInputs.cache
+C:\Users\Виталий\Desktop\NET-Training\ExtTraining.Autumn.2018.3\No4.Solution\obj\Debug\No4.Solution.dll
+C:\Users\Виталий\Desktop\NET-Training\ExtTraining.Autumn.2018.3\No4.Solution\obj\Debug\No4.Solution.pdb

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace No2.Solution.Console
 {
+    using System.Threading;
+
     class Program
     {
         static void Main(string[] args)
@@ -14,9 +16,9 @@ namespace No2.Solution.Console
 
             var bank = new Bank("Bank", stock);
             var broker = new Broker("Broker", stock);
-
-            stock.Register(bank);
-            stock.Register(broker);
+            
+            stock.Market();
+            Thread.Sleep(1000);
             stock.Market();
 
             System.Console.ReadLine();
