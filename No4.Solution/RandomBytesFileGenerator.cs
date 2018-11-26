@@ -1,8 +1,6 @@
 ﻿using System;
-using System.IO;
-using No4.Solution;
 
-namespace No4
+namespace No4.Solution
 {
     public class RandomBytesFileGenerator : AbstractFileGenerator
     {
