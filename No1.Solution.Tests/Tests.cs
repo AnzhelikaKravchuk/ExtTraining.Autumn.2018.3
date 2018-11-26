@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using No1.Solution.No1.Solution;
+using NUnit.Framework;
+
+namespace No1.Solution.Tests
+{
+    class Tests
+    {
+        [Test]      
+        public void ArrayToTextArray_ReturnsArrayOfStringsWithWordsOfDigits()
+        {
+            var validator = new DefaultPasswordValidator();
+            var repository=new SqlRepository();
+            PasswordCheckerService service=new PasswordCheckerService(validator,repository);
+            Assert.Throws<ArgumentException>(() => service.Verify(null));
+            Assert.Throws<ArgumentException>(() => service.Verify(string.Empty));
+            Assert.Throws<ArgumentException>(() => service.Verify("123abc"));
+            Assert.Throws<ArgumentException>(() => service.Verify("123abc78901234567890"));
+            Assert.Throws<ArgumentException>(() => service.Verify("1234567890"));
+            Assert.Throws<ArgumentException>(() => service.Verify("abcdefghi"));
+        }
+    }
+}
