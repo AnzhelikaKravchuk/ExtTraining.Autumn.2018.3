@@ -8,11 +8,11 @@ namespace No1.Solution
     {
         private readonly IRepository repository;
         private readonly IPasswordValidator validator;
-        private readonly ILogger logger;
 
         public PasswordCheckerService(IPasswordValidator validator, IRepository repository)
         {
             this.validator = validator;
+            this.repository = repository;
         }
        
         public bool AddPassword(string password)
