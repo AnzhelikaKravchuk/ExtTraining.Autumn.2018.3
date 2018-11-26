@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace No4.Solution
+namespace No4.Solution.Entities
 {
     class RandomCharsFileGenerator : RandomAbstr, IChar
     {

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace No4.Solution
+namespace No4.Solution.Entities
 {
     /// <summary>
     /// наследую <see cref="RandomAbstr"/> для наследования конструктора и интерфейс для методов данного класса

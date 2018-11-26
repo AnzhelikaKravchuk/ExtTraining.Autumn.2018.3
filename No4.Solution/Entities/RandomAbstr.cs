@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace No4.Solution
+namespace No4.Solution.Entities
 {
     /// <summary>
     /// использовал абстрактный класс для реализации схожих классов (Char, Bytes)
