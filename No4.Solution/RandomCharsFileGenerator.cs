@@ -32,15 +32,5 @@ namespace No4.Solution
 
             return new string(chars.ToArray());
         }
-
-        protected override void WriteBytesToFile(string fileName, byte[] content)
-        {
-            if (!Directory.Exists(WorkingDirectory))
-            {
-                Directory.CreateDirectory(WorkingDirectory);
-            }
-
-            File.WriteAllBytes($"{WorkingDirectory}//{fileName}", content);
-        }
     }
 }
