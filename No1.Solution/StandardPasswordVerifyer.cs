@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace No1
+namespace No1.Solution
 {
-    public class PasswordCheckerService
+    public class StandardPasswordVerifyer : IPasswordVerifyer
     {
-        private readonly SqlRepository repository = new SqlRepository();
-
-        public Tuple<bool, string> VerifyPassword(string password)
+        public virtual Tuple<bool, string> Verify(string password)
         {
             if (password == null)
                 throw new ArgumentException($"{password} is null arg");
@@ -30,8 +31,6 @@ namespace No1
             // check if password contains at least one digit character 
             if (!password.Any(char.IsNumber))
                 return new Tuple<bool, string>(false, $"{password} hasn't digits");
-
-            repository.Create(password);
 
             return new Tuple<bool, string>(true, "Password is Ok. User was created");
         }
