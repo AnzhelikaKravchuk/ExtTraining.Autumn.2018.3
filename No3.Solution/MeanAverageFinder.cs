@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace No3.Solution
 {
-    class AverageFinder
+    public class MeanAverageFinder : IComputer
     {
+        public double Find(IEnumerable<double> values)
+        {
+            return values.Sum() / values.Count();
+        }
     }
 }

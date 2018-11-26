@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace No3.Solution
 {
-    class AveragingMethod
+    public enum AveragingMethod
     {
+        Mean,
+        Median
     }
 }

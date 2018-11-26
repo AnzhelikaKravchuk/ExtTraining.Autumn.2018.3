@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace No3.Solution
 {
-    interface ICalculator
+    public interface IComputer
     {
+        double Find(IEnumerable<double> values);
     }
 }

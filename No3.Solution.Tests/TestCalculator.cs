@@ -15,7 +15,7 @@ namespace No3.Solution.Tests
 
             double expected = 8.3636363;
 
-            double actual = calculator.CalculateAverage(values, AveragingMethod.Mean);
+            double actual = calculator.CalculateAverage(values, new MeanAverageFinder());
 
             Assert.AreEqual(expected, actual, 0.000001);
         }
@@ -27,7 +27,7 @@ namespace No3.Solution.Tests
 
             double expected = 8.0;
 
-            double actual = calculator.CalculateAverage(values, AveragingMethod.Median);
+            double actual = calculator.CalculateAverage(values, new MedianAlgorithmSolver());
 
             Assert.AreEqual(expected, actual, 0.000001);
         }
