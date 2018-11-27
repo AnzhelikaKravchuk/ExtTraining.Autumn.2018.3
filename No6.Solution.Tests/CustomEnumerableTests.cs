@@ -1,4 +1,6 @@
 ﻿using NUnit.Framework;
+using System;
+using System.Linq;
 
 namespace No6.Solution.Tests
 {
@@ -9,9 +11,12 @@ namespace No6.Solution.Tests
         public void Generator_ForSequence1()
         {
             int[] expected = {1, 1, 2, 3, 5, 8, 13, 21, 34, 55};
-
-            Assert.Inconclusive();
+            int[] actual = Generator.Generate<int>(Method_ForSequence1, 1, 1, 10).ToArray();
+            CollectionAssert.AreEqual(expected, actual);
         }
+
+        private int Method_ForSequence1(int previous, int current)
+        => previous + current;
 
         [Test]
         public void Generator_ForSequence2()
