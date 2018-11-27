@@ -12,11 +12,12 @@ namespace No2.Solution.Console
         {
             var stock = new Stock();
 
-            var bank = new Bank("Bank", stock);
-            var broker = new Broker("Broker", stock);
+            var bank = new Bank("Bank");
+            var broker = new Broker("Broker");
 
-            stock.Register(bank);
-            stock.Register(broker);
+            bank.StartTrade(stock);
+            broker.StartTrade(stock);
+
             stock.Market();
 
             System.Console.ReadLine();
