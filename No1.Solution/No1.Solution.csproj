@@ -40,7 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\FileRepository.cs" />
+    <Compile Include="Factory\IRepositoryFactory.cs" />
+    <Compile Include="Service\IRepositoryService.cs" />
+    <Compile Include="Entities\Repository.cs" />
+    <Compile Include="Factory\RepositoryFactory.cs" />
+    <Compile Include="Service\RepositoryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entities\RepositoryType.cs" />
+    <Compile Include="Entities\SqlRepository.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

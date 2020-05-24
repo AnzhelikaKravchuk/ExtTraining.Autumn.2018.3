@@ -40,7 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IBytes.cs" />
+    <Compile Include="Interfaces\IChar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entities\RandomAbstr.cs" />
+    <Compile Include="Entities\RandomBytesFileGenerator.cs" />
+    <Compile Include="Entities\RandomCharsFileGenerator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

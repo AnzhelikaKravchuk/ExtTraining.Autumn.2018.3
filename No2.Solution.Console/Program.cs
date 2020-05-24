@@ -1,4 +1,6 @@
-﻿using System;
+﻿using No2.Solution.Entities;
+using No2.Solution.Event;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +12,12 @@ namespace No2.Solution.Console
     {
         static void Main(string[] args)
         {
+
+            Trade trade = new Trade();
             var stock = new Stock();
 
-            var bank = new Bank("Bank", stock);
-            var broker = new Broker("Broker", stock);
+            Bank bank = new Bank("Bank-Belarus", stock);
+            Broker broker = new Broker("James", stock);
 
             stock.Register(bank);
             stock.Register(broker);
