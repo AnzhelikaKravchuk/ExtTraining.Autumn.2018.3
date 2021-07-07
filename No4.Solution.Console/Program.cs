@@ -1,9 +1,18 @@
-﻿namespace No4.Solution.Console
+﻿using static System.Console;
+
+namespace No4.Solution.Console
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            var generatorBytes = new RandomBytesFileGenerator();
+            var generatorChars = new RandomCharsFileGenerator();
+
+            generatorChars.GenerateFiles(1, 3333);
+            generatorBytes.GenerateFiles(1, 3333);
+
+            ReadKey();
         }
     }
 }

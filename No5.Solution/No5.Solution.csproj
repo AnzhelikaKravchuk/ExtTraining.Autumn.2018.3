@@ -40,7 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DocumentParts\BoldText.cs" />
+    <Compile Include="Document.cs" />
+    <Compile Include="DocumentParts\IDocumentPart.cs" />
+    <Compile Include="DocumentParts\Hyperlink.cs" />
+    <Compile Include="DocumentParts\PlainText.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Описание.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

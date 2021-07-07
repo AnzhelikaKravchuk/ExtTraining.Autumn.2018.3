@@ -8,7 +8,7 @@ namespace No6.Solution.Tests
         [Test]
         public void Generator_ForSequence1()
         {
-            int[] expected = {1, 1, 2, 3, 5, 8, 13, 21, 34, 55};
+            int[] expected = { 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 };
 
             Assert.Inconclusive();
         }
